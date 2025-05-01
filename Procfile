@@ -1,0 +1,1 @@
+web: python click_bot.py
