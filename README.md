@@ -1,27 +1,26 @@
-# Telegram Click Bot (Flask + Webhook)
-
-A simple Telegram bot built with Python, Flask, and Webhook that gives users clickable earning links and tracks stats.
+# Telegram Click Bot
 
 ## Features
+- Telegram Bot Integration
+- Flask Web Server
+- Click Tracking
+- Webhook Support
+- Render Deployment Ready
 
-- Telegram Bot with `/start` and `/stat` commands
-- Inline button for users to click and earn
-- Tracks user clicks and total income
-- Saves data in `users.json`
-- Flask server handles webhooks and click API
-- Deployment-ready for Render or other services
+## Setup Instructions
 
----
+1. Set environment variables in Render dashboard:
+   - `BOT_TOKEN`
+   - `ADS_LINK`
+   - (Optional) `PORT`
 
-## Environment Variables
+2. Deploy using Render:
+   - Add your GitHub repo or upload this ZIP.
+   - Render will auto-install from `requirements.txt`.
+   - `Procfile` ensures Flask runs via Gunicorn.
 
-Set these environment variables in Render's Dashboard or a `.env` file:
+3. Bot Commands:
+   - `/start` - Show earning message
+   - `/stat` - Show user's click count
 
-- `BOT_TOKEN` — Your Telegram Bot Token
-- `ADS_LINK` — The link users will click to earn
-- `RENDER_EXTERNAL_HOSTNAME` — (Auto-set by Render)
-- `PORT` — (Optional, default: 5000)
-
----
-
-## File Structure
+Make sure `users.json` is present or it will be auto-created.
