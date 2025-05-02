@@ -1,26 +1,26 @@
-# Telegram Click Bot
+# Telegram Click Bot with Flask
 
 ## Features
-- Telegram Bot Integration
-- Flask Web Server
-- Click Tracking
-- Webhook Support
-- Render Deployment Ready
+- Telegram Bot integration with `/start` and `/stat` commands
+- Flask backend with `/click` API and `/webhook/<TOKEN>` route
+- Clicks tracked per user, saved in `users.json`
+- Environment-variable-based config (BOT_TOKEN, ADS_LINK)
+- Ready to deploy on Render with Procfile & requirements.txt
 
-## Setup Instructions
+## Environment Variables
+- `BOT_TOKEN` (required): Your Telegram Bot Token
+- `ADS_LINK` (optional): Link opened when user clicks earn button
 
-1. Set environment variables in Render dashboard:
-   - `BOT_TOKEN`
-   - `ADS_LINK`
-   - (Optional) `PORT`
+## Deployment
+1. Upload code to GitHub
+2. Connect Render to GitHub repo
+3. Set Environment Variables in Render Dashboard
+4. Set Telegram Bot Webhook:
+```
+https://<your-render-url>/webhook/<your-bot-token>
+```
 
-2. Deploy using Render:
-   - Add your GitHub repo or upload this ZIP.
-   - Render will auto-install from `requirements.txt`.
-   - `Procfile` ensures Flask runs via Gunicorn.
-
-3. Bot Commands:
-   - `/start` - Show earning message
-   - `/stat` - Show user's click count
-
-Make sure `users.json` is present or it will be auto-created.
+## Usage
+- `/start`: Get earn button
+- `/stat`: View your click count
+- Use `/click` API to register clicks

@@ -1,1 +1,1 @@
-web: gunicorn click_bot:app
+web: python click_bot.py
